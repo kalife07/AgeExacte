@@ -1,5 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head></head>
-<body><body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur d'âge en direct</title>
+
+    <style>
+        body {
+            background-color:mediumaquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #age-display {
+            text-align: center;
+            color:red;
+        }
+
+        #birth-date {
+            margin: 20px;
+            
+        }
+
+        input {
+            width: 400px;
+            height: 80px;
+            font-size: 55px;
+        }
+
+        label {
+            font-size: 100px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <label for="birth-date">Choisir date de naissance: </label>
+    <input type="date" id="birth-date">
+    <div id="age-display"></div>
+    <body>
+
+
 </html>
