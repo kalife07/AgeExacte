@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="calc_age.js"></script>
     <title>Compteur d'âge en direct</title>
 
     <style>
@@ -39,8 +40,10 @@
 </head>
 <body>
     <label for="birth-date">Choisir date de naissance: </label>
-    <input type="date" id="birth-date">
+    <input type="date" id="birth-date" onchange="show_date();">
     <div id="age-display"></div>
+
+    <p id="text_date"></p>
     <body>
 
 
