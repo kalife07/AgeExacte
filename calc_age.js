@@ -1,3 +1,9 @@
+/*document.addEventListener("DOMContentLoaded", 
+    function() { 
+        let today = new Date(); 
+        let yyyy = today.getFullYear(); 
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based let dd = String(today.getDate()).padStart(2, '0'); let todayStr = `${yyyy}-${mm}-${dd}`; document.getElementById("birth-date").setAttribute("max", todayStr); });*/
+
 let today = new Date();
 let annee = today.getFullYear();
 let mois = today.getMonth();
