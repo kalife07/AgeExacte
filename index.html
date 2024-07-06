@@ -5,36 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="calc_age.js"></script>
     <title>Compteur d'âge en direct</title>
-
     <style>
         body {
-            background-color:mediumaquamarine;
+            background-color: mediumaquamarine;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
-
         #age-display {
             text-align: center;
-            color:red;
+            color: red;
         }
-
         #birth-date {
             margin: 20px;
-            
+            width: 100px;
+            height: 20px;
+            font-size: 12px;
         }
-
         input {
             width: 400px;
             height: 80px;
             font-size: 55px;
         }
-
         label {
-            font-size: 100px;
-            color:white;
+            font-size: 20px;
+            color: white;
+        }
+        .date {
+            font-size: 18px;
+        }
+        #date_auj {
+            font-size: 18px;
         }
     </style>
 </head>
@@ -42,9 +45,8 @@
     <label for="birth-date">Choisir date de naissance: </label>
     <input type="date" id="birth-date" onchange="show_date();">
     <div id="age-display"></div>
-
-    <p id="text_date"></p>
-    <body>
-
-
+    <p id="text_date" class="date"></p>
+    <p id="date_auj"></p>
+    <p id="diff"></p>
+</body>
 </html>
