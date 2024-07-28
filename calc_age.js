@@ -80,12 +80,12 @@
                     const diffHeur = Math.floor(jourRestante/msParHeur);
                     const heurRestante = ms%msParHeur;
                     const diffMinute = Math.floor(heurRestante/msParMinute);
-                    /*const minuteRestante = ms%msParMinute;
+                    const minuteRestante = ms%msParMinute;
                     const diffSeconde = Math.floor(minuteRestante/msPerSecond);
-                    const secondeRestante = ms%msPerSecond;*/
-                    let min = String(diffMinute.padStart(2, '0'));
-                    let sec = String(diffSeconde.padStart(2, '0')); 
-                    diff_txt.textContent = `La difference est ${diffAnnee} annees, ${diffMois} mois, ${diffJour} jours, ${diffHeur} heures, ${diffMinute} minutes et ${diffSeconde} secondes.`;
+                    const secondeRestante = ms%msPerSecond;
+                    let min = String(diffMinute).padStart(2, '0');
+                    let sec = String(diffSeconde).padStart(2, '0'); 
+                    diff_txt.textContent = `La difference est ${diffAnnee} annees, ${diffMois} mois, ${diffJour} jours, ${diffHeur} heures, ${min} minutes et ${sec} secondes.`;
                 }
                 
                 function show_date() {
