@@ -14,15 +14,23 @@
                 let min = today.getMinutes();
                 let sec = today.getSeconds();
                 let mill = today.getMilliseconds();
-        
-                
-        
                 let todayStr = `${annee}-${mois}-${jour}`;
-                
                 document.getElementById("birth-date").setAttribute("max", todayStr);
-        });
+                setInterval(updateCurrentTime,1000);
+            });
                 
-        
+        // fonction ici
+        function updateCurrentTime() { 
+            let now = new Date(); 
+            let annee = now.getFullYear();
+            let mois = String(now.getMonth() + 1).padStart(2, '0'); 
+            let jour = String(now.getDate()).padStart(2, '0'); 
+            let heur = String(now.getHours()).padStart(2, '0'); 
+            let min = String(now.getMinutes()).padStart(2, '0'); 
+            let sec = String(now.getSeconds()).padStart(2, '0'); 
+            let mill = String(now.getMilliseconds()).padStart(3, '0'); 
+            document.getElementById("current-time").textContent = `Current Time: ${annee}-${mois}-${jour} ${heur}:${min}:${sec}:${mill}`; 
+        }
                 
         function transformation_date(date_debut, date_fin) {
             const date1 = new Date(date_debut.annee+"-"+date_debut.mois+"-"+date_debut.jour);
@@ -56,6 +64,8 @@
                     const msParJour = 24*60*60*1000;
                     const msParMois = msParJour*30.44;
                     const msParAnnee = msParJour*365.25;
+                    const msParHeur = 1000*60*60;
+                    const msParMinute = 1000*60;
                     const msPerSecond = 1000; 
                     /*const msPerMinute = msPerSecond * 60; 
                     const msPerHour = msPerMinute * 60; 
@@ -67,7 +77,15 @@
                     const moisRestante = ms%msParMois;
                     const diffJour = Math.floor(moisRestante/msParJour);
                     const jourRestante = ms%msParJour;
-                    diff_txt.textContent = `La difference est ${diffAnnee} annees, ${diffMois} mois et ${diffJour} jours.`;
+                    const diffHeur = Math.floor(jourRestante/msParHeur);
+                    const heurRestante = ms%msParHeur;
+                    const diffMinute = Math.floor(heurRestante/msParMinute);
+                    /*const minuteRestante = ms%msParMinute;
+                    const diffSeconde = Math.floor(minuteRestante/msPerSecond);
+                    const secondeRestante = ms%msPerSecond;*/
+                    let min = String(diffMinute.padStart(2, '0'));
+                    let sec = String(diffSeconde.padStart(2, '0')); 
+                    diff_txt.textContent = `La difference est ${diffAnnee} annees, ${diffMois} mois, ${diffJour} jours, ${diffHeur} heures, ${diffMinute} minutes et ${diffSeconde} secondes.`;
                 }
                 
                 function show_date() {
